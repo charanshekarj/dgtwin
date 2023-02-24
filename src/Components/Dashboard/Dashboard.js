@@ -2,10 +2,20 @@ import React, {useState} from 'react'
 import Footer from './Footer'
 import Header from './Header'
 import Chart from "./Chart";
+import { useNavigate } from 'react-router';
 
 const Dashboard = () => {
   
+
+
   const [open, setOpen] = useState(false);
+
+
+//   const navigate=useNavigate();
+//   const logoutHandler=()=>{
+//       localStorage.removeItem("token");
+//       navigate('/');
+//   }
 
     const data= [
       {
@@ -37,10 +47,12 @@ const Dashboard = () => {
   return (
     <>
     <div className='container'>
+    {/* <button className='theme-btngrad btn' onClick={logoutHandler}>Logout</button> */}
     <div className=' w-75 container-border content'>
+  
     <table class="table  ">
   <thead>
-    <tr className='text-center table-info '>
+    <tr className='text-center  ' style={{backgroundColor:"#40C1AC"}}>
       <th scope="col">Sensor</th>
       <th scope="col">Current Temperature</th>
       <th scope="col">Current Humidity</th>

@@ -10,9 +10,17 @@ html, body {
     padding: 0;
     /* text-align: center; */
   }
-.header {
+/* .header {
     height: 60px;
     line-height: 60px;
+  }
+
+  .header1 {
+    height: 30px;
+    line-height: 60px;
+  } */
+  .header-style {
+    padding: 25px 60px 0px 70px;
   }
   
   .content {
@@ -22,4 +30,21 @@ html, body {
     align-items: center;
     justify-content: center;
     /* background: rgba(0, 255, 0, 0.5); */
+  }
+
+  .theme-btngrad{
+    float: right; 
+    background-color: #40C1AC; 
+  }
+
+  .footer-style {
+    position: relative;
+    font-size: 15px;
+    overflow: hidden;
+    margin-bottom: 0px auto;
+    padding: 6px;
+    margin-top: 20px;
+    background-color: #85c9bb;
+    text-align: center;
+    /*** blog-widget  ***/
   }

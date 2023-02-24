@@ -11,6 +11,15 @@
 
    .theme-btngrad{
     float: right; 
-    background-color: #00FFFF; 
+    background-color: #40C1AC; 
   }
   
+  .theme-btngrad:hover{
+    float: right; 
+    background-color: #07bb9d; 
+  }
+
+  .btn-primary {
+    --bs-btn-border-color: none;}
+
+
