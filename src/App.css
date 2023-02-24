@@ -37,3 +37,8 @@
     transform: rotate(360deg);
   }
 }
+
+.container-border {
+  border: #282c34 solid 2px;
+  margin: auto;
+}

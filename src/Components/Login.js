@@ -58,7 +58,7 @@ const Login = () => {
 
 
   return (
-    <section className="wpo-contact-pg-section section-padding ">
+    <section className="">
     <div className="container">
       <div className="row">
         {/* <div className="col-md-1"><img className="imgsign" src="https://mmaxstorage.blob.core.windows.net/assets/media/webassets/home/Group337.svg" alt="slide-right"/></div> */}

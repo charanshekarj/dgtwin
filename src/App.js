@@ -10,7 +10,7 @@ import {  useRoutes } from 'react-router-dom';
 function App() {
   const element = useRoutes(appRoute);
   return (
-    <div className="m-4">
+    <div className="container">
       {/* <h1>Digital twin</h1> */}
    
     

@@ -28,25 +28,23 @@ const Dashboard = () => {
     ]
   return (
     <>
-    
-    <div>
-    <table class="table  table-striped">
+    <div className='container'>
+    <div className=' w-75 container-border content'>
+    <table class="table  ">
   <thead>
-    <tr>
+    <tr className='text-center table-info '>
       <th scope="col">Sensor</th>
       <th scope="col">Temperature</th>
       <th scope="col">Humidity</th>
-      {/* <th scope="col">Handle</th> */}
     </tr>
   </thead>
   <tbody>
     {
         data.map((item,i)=>(
-            <tr>
+            <tr className='text-center '>
             <th scope="row" onClick={()=>(alert(`Hiiiii ${i}`))}>{item.id}</th>
             <td>{item.temp}</td>
             <td>{item.humidity}</td>
-            {/* <td>@mdo</td> */}
           </tr>
         ))
     }
@@ -55,6 +53,8 @@ const Dashboard = () => {
   </tbody>
 </table>
     </div>
+    </div>
+
     
     </>
   )
