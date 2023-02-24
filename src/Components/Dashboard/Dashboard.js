@@ -43,7 +43,7 @@ const Dashboard = () => {
     {
         data.map((item,i)=>(
             <tr>
-            <th scope="row" onClick={()=>(alert(`Hii ${i}`))}>{item.id}</th>
+            <th scope="row" onClick={()=>(alert(`Hiiiii ${i}`))}>{item.id}</th>
             <td>{item.temp}</td>
             <td>{item.humidity}</td>
             {/* <td>@mdo</td> */}
