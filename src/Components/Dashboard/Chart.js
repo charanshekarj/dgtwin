@@ -1,7 +1,8 @@
 import "./styles.css";
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {
   ResponsiveContainer,
+  Legend,
   LineChart,
   Line,
   XAxis,
@@ -18,37 +19,37 @@ const Chart = () => {
     const data = [
         {
           name: "12 PM",
-          temp: 39,
+          temperature: 39,
           humidity: 56
         },
         {
           name: "01 PM",
-          temp: 43,
+          temperature: 43,
           humidity: 40
         },
         {
           name: "02 PM",
-          temp: 38,
+          temperature: 38,
           humidity: 32
         },
         {
           name: "03 PM",
-          temp: 35,
+          temperature: 35,
           humidity: 17
         },
         {
           name: "04 PM",
-          temp: 40,
+          temperature: 40,
           humidity: 38
         },
         {
           name: "06 PM",
-          temp: 27,
+          temperature: 27,
           humidity: 28
         },
         {
           name: "07 PM",
-          temp: 23,
+          temperature: 23,
           humidity: 31
         }
       ];
@@ -56,15 +57,33 @@ const Chart = () => {
         const renderCustomLabel = ({ x, y, value }) => {
           return <text style={{fontSize:"12px"}} x={x} y={y} fill="#666" textAnchor="middle" dy={-6}>{`${value}%`}</text>;
         };
+
+        const DigitalClock = () => {
+          const [time, setTime] = useState(new Date());
+        
+          useEffect(() => {
+            const interval = setInterval(() => {
+              setTime(new Date());
+            }, 1000);
+            return () => clearInterval(interval);
+          }, []);
+        
+          const formatTime = (time) => {
+            return time.toLocaleTimeString([], { hour12: true });
+          };
+        
+          return <div>{formatTime(time)}</div>;
+        }
+        
       
   return (
-    <div style={{ width: '100%' }} className="container">
-      <h4>Calfus Weather</h4>
-      <h6>Temperature</h6>
-      <ResponsiveContainer width="100%" height={200}>
+    <div className="container">
+      <h4 className="mt-4"> Room's Vibe: {DigitalClock()} </h4>
+      <h6 style={{textAlign:"center"}}>Temperature</h6>
+      <ResponsiveContainer width="100%" height={250} className="mb-4">
       <AreaChart
         width={500}
-        height={200}
+        height={250}
         data={data}
         syncId="anyId"
         margin={{
@@ -75,15 +94,16 @@ const Chart = () => {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
+        <XAxis dataKey="name"  />
         <YAxis />
         <Tooltip />
-        <Brush />
-        <Area type="monotone" dataKey="temp" stroke="#82ca9d" fill="#82ca9d" />
+        <Legend />
+        <Brush fill="#c4f8ef"/>
+        <Area type="monotone" dataKey="temperature" stroke="#ff1414" fill="#ffb066" />
       </AreaChart>
       </ResponsiveContainer>
       
-      <h6>Humidity</h6>
+      <h6 style={{textAlign:"center"}}>Humidity</h6>
       
       <ResponsiveContainer width="100%" height={140}>
       <LineChart
@@ -102,7 +122,8 @@ const Chart = () => {
         <XAxis dataKey="name" />
         <YAxis />
         <Tooltip />
-        <Line type="monotone" dataKey="humidity" stroke="#8884d8" fill="#8884d8" label={renderCustomLabel}/>
+        <Legend />
+        <Line type="monotone" dataKey="humidity" stroke="#650094" fill="#8884d8" label={renderCustomLabel}/>
       </LineChart>
       </ResponsiveContainer>
       

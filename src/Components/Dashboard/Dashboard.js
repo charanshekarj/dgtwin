@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import Footer from './Footer'
 import Header from './Header'
 import Chart from "./Chart";
+import { color } from 'd3-color';
 
 const Dashboard = () => {
   
@@ -40,7 +41,7 @@ const Dashboard = () => {
     <div className=' w-75 container-border content'>
     <table class="table  ">
   <thead>
-    <tr className='text-center table-info '>
+    <tr className='text-center' style={{backgroundColor:"#40C1AC"}}>
       <th scope="col">Sensor</th>
       <th scope="col">Current Temperature</th>
       <th scope="col">Current Humidity</th>
