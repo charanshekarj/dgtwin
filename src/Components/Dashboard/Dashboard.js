@@ -52,7 +52,7 @@ const Dashboard = () => {
   
     <table class="table  ">
   <thead>
-    <tr className='text-center  ' style={{backgroundColor:"#40C1AC"}}>
+    <tr className='text-center' style={{backgroundColor:"#40C1AC"}}>
       <th scope="col">Sensor</th>
       <th scope="col">Current Temperature</th>
       <th scope="col">Current Humidity</th>
