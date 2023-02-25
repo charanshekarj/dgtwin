@@ -1,0 +1,119 @@
+
+.fix_foot{
+    height: 60px;
+    line-height: 60px;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    /* text-align: center; */
+  }
+/* .header {
+    height: 60px;
+    line-height: 60px;
+  }
+
+  .header1 {
+    height: 30px;
+    line-height: 60px;
+  } */
+  .header-style {
+    padding: 25px 60px 0px 70px;
+  }
+  
+  .content {
+    height: calc(100% - 120px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background: rgba(0, 255, 0, 0.5); */
+  }
+
+  .theme-btngrad{
+    float: right; 
+    background-color: #40C1AC; 
+  }
+
+  .App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+
+.chart {
+    position: relative;
+}
+
+.theme-btn{
+
+    text-align: center;
+  }
+
+  .sellformbtn11{
+    clip-path: polygon(500% 0, 100% 100%, 88% 100%, 0 100%, 0 0);
+    /*font-size: small !important;*/
+    border-radius: 26px !important;
+   }
+
+   .theme-btngrad{
+    float: right; 
+    background-color: #40C1AC; 
+  }
+  
+  .theme-btngrad:hover{
+    float: right; 
+    background-color: #07bb9d; 
+  }
+
+  .btn-primary {
+    --bs-btn-border-color: none;}
+
+    
+  .footer-style {
+    position: relative;
+    font-size: 15px;
+    overflow: hidden;
+    margin-bottom: 0px auto;
+    padding: 6px;
+    margin-top: 20px;
+    background-color: #85c9bb;
+    text-align: center;
+    /*** blog-widget  ***/
+  }
+
+  .theme-btngrad1{
+    float: left; 
+    margin-left: 600px;
+    background-color: #40C1AC; 
+  }
+
+  .theme-btn{
+
+    text-align: center;
+  }
+
+  .sellformbtn11{
+    clip-path: polygon(500% 0, 100% 100%, 88% 100%, 0 100%, 0 0);
+    /*font-size: small !important;*/
+    border-radius: 26px !important;
+   }
+
+   .theme-btngrad{
+    float: right; 
+    background-color: #40C1AC; 
+  }
+  
+  .theme-btngrad:hover{
+    float: right; 
+    background-color: #07bb9d; 
+  }
+
+  .btn-primary {
+    --bs-btn-border-color: none;}
+
+    .container-border 
+ { border: #282c34 solid 2px;
+  margin: auto;}

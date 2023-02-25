@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import { useNavigate } from 'react-router';
 import { UserAuthentication } from '../Consts/Userauthentication';
-import './Login.css'
+
 const Login = () => {
 
     const initialValues = { username: "", password: "" };
   const [formValues, setFormValues] = useState(initialValues);
   const [error,setError]=useState(false)
   const [formError, setFormError] = useState({});
+  const [auth,setAuth] = useState('');
   const navigate=useNavigate()
 
 
@@ -34,6 +35,7 @@ const Login = () => {
         if(user.username===formValues.username && user.password===formValues.password ){
           navigate('/dashboard')
           localStorage.setItem("token",user.token)
+        
       }
 
     })
@@ -72,6 +74,7 @@ const Login = () => {
     } else if (values.password.length < 6) {
       errors.password = "Password should be atleast 6 characters long";
     }
+   
     return errors;
   };
 
@@ -130,6 +133,7 @@ const Login = () => {
               {/* Sign In */}
               Sign In
             </button>
+            
             {/* {error && <p className="text-danger">{errorMessage}</p>} */}
             {/* <Link to="/account/forgetpassword">
               <h6 className="mt-3 text-orange">{d.signIn.forgotPassword}</h6>

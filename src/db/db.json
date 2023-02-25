@@ -1,5 +1,84 @@
 {
-    "chart":{
-        "title": "Calfus Weather"
-    }
+    "properties": "abcd",
+    "data": [
+        {
+           "name": "12 PM",
+           "temperature": 39,
+           "humidity": 56
+        },
+        {
+           "name": "01 PM",
+           "temperature": 43,
+           "humidity": 40
+        },
+        {
+           "name": "02 PM",
+           "temperature": 38,
+           "humidity": 32
+        },
+        {
+           "name": "03 PM",
+           "temperature": 35,
+           "humidity": 17
+        },
+        {
+           "name": "04 PM",
+           "temperature": 40,
+           "humidity": 38
+        },
+        {
+           "name": "06 PM",
+           "temperature": 27,
+           "humidity": 28
+        },
+        {
+           "name": "07 PM",
+           "temperature": 23,
+           "humidity": 31
+        }
+     ]
+,
+     "data1":[
+        {
+           "id": 1,
+           "temp": 90,
+           "humidity": 101,
+           "time": 2
+        },
+        {
+           "id": 2,
+           "temp": 91,
+           "humidity": 102,
+           "time": 3
+        },
+        {
+           "id": 3,
+           "temp": 91,
+           "humidity": 102,
+           "time": 5
+        }
+     ],
+
+     "userdata":[
+        {
+           "username": "akash.shirfule@gmail.com",
+           "password": "Akash@123",
+           "token": "sdfuiyrdesftygjhgfdg"
+        },
+        {
+           "username": "vaibhavi.deshmukh@gmail.com",
+           "password": "Vaibhavi@123",
+           "token": "sdfuiyrdesftygjhgfdg"
+        },
+        {
+           "username": "charan@gmail.com",
+           "password": "Charan@123",
+           "token": "sdfuiyrdesftygjhgfdg"
+        },
+        {
+           "username": "admin@gmail.com",
+           "password": "Admin@123",
+           "token": "sdfuiyrdesftygjhgfdg"
+        }
+     ]
 }
