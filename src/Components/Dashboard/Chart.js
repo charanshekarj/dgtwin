@@ -72,13 +72,13 @@ const Chart = () => {
             return time.toLocaleTimeString([], { hour12: true });
           };
         
-          return <div>{formatTime(time)}</div>;
+          return <div style={{color:"red"}}>{formatTime(time)}</div>;
         }
         
       
   return (
     <div className="container">
-      <h4 className="mt-4"> Room's Vibe: {DigitalClock()} </h4>
+      <h4 className="mt-4 d-flex"> Room's Vibe: &nbsp;{DigitalClock()} </h4>
       <h6 style={{textAlign:"center"}}>Temperature</h6>
       <ResponsiveContainer width="100%" height={250} className="mb-4">
       <AreaChart

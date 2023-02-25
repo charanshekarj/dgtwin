@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router';
+import { UserAuthentication } from '../Consts/Userauthentication';
 import './Login.css'
 const Login = () => {
 
@@ -12,7 +13,7 @@ const Login = () => {
 
 
 //   const token = localStorage.getItem("mmx_storage");
-  const [type, setType] = useState("password");
+//   const [type, setType] = useState("password");
 //   const [picon, setPicon] = useState("fa-eye-slash");
 
   const ChangeHandler = e => {
@@ -23,11 +24,24 @@ const Login = () => {
 
   const handleSubmit = e => {
     //e.preventDefault();
+
+
+    e.preventDefault();
+
+    UserAuthentication.forEach((user) => {
+        console.log(user, formValues);
+        if(user.username===formValues.username && user.password===formValues.password ){
+            
+          navigate('/dashboard')
+          localStorage.setItem("token",user.token)
+      }})
+
     let errors = validate(formValues);
-    if (Object.values(errors).length === 0) {
+    if (Object.values(errors).length === 0)  {
     //   dispatch(login(formValues, navigate, location));
       setFormValues(initialValues);
-      navigate("/dashboard")
+      
+    //   navigate("/dashboard")
 
     } else setFormError(errors);
   };
@@ -68,11 +82,11 @@ const Login = () => {
             <div className="form-group">
               <h3 className="fw-bold  mb-3">Log In</h3>
               {/* signinlabel  */}
-              <label htmlFor="username fw-bold ">Email</label>
+              <label htmlFor="username fw-bold ">Username</label>
               <input
                 value={formValues.username}
                 onChange={ChangeHandler}
-                type="email"
+                type="text"
                 name="username"
                 className="form-control logboxin mt-2"
                 placeholder="Enter username"
