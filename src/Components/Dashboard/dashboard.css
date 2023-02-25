@@ -48,3 +48,9 @@ html, body {
     text-align: center;
     /*** blog-widget  ***/
   }
+
+  .theme-btngrad1{
+    float: left; 
+    margin-left: 600px;
+    background-color: #40C1AC; 
+  }

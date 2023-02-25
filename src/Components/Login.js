@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router';
 import { UserAuthentication } from '../Consts/Userauthentication';
 import './Login.css'
@@ -6,6 +6,7 @@ const Login = () => {
 
     const initialValues = { username: "", password: "" };
   const [formValues, setFormValues] = useState(initialValues);
+  const [error,setError]=useState(false)
   const [formError, setFormError] = useState({});
   const navigate=useNavigate()
 
@@ -27,14 +28,17 @@ const Login = () => {
 
 
     e.preventDefault();
-
+    
     UserAuthentication.forEach((user) => {
         console.log(user, formValues);
         if(user.username===formValues.username && user.password===formValues.password ){
-            
           navigate('/dashboard')
           localStorage.setItem("token",user.token)
-      }})
+      }
+
+    })
+    
+
 
     let errors = validate(formValues);
     if (Object.values(errors).length === 0)  {
@@ -43,7 +47,9 @@ const Login = () => {
       
     //   navigate("/dashboard")
 
-    } else setFormError(errors);
+    } else {
+        setError(true)
+        setFormError(errors)};
   };
 
 //   const handleIcon = () => {
@@ -73,7 +79,7 @@ const Login = () => {
 
   return (
     <section className="">
-    <div className="container">
+   <div className="container">
       <div className="row">
         {/* <div className="col-md-1"><img className="imgsign" src="https://mmaxstorage.blob.core.windows.net/assets/media/webassets/home/Group337.svg" alt="slide-right"/></div> */}
         <div className='col-md-3 col-sm-0'></div>
@@ -92,7 +98,7 @@ const Login = () => {
                 placeholder="Enter username"
               />
             </div>
-            <p className="text-danger">{formError.username}</p>
+            {error && <p className="text-danger">{formError.username}</p>}
             <div className="form-group mt-1">
               <label htmlFor="password">Password</label>
               <div className="d-flex">
@@ -113,7 +119,7 @@ const Login = () => {
                 </span> */}
               </div>
             </div>
-            <p className="text-danger">{formError.password}</p>
+           {error && <p className="text-danger">{formError.password}</p>}
            
             <button
               className="d-flex px-5 btn btn-primary mt-3 align theme-btngrad"
